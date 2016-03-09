@@ -9,9 +9,10 @@ import java.util.List;
  * Created by Caroline on 3/8/16.
  */
 public interface GameRepository extends CrudRepository<Game, Integer> {
-    List<Game> findByGenre(String genre);
-    List<Game> findByGenreAndReleaseYear(String genre, int releaseYear);
-    List<Game> findByGenreAndReleaseYearIsGreaterThanEqual(String genre, int minReleaseYear);
+    List<Game> findByUser(User user);
+    List<Game> findByUserAndGenre(User user, String genre);
+    List<Game> findByUserAndGenreAndReleaseYear(User user, String genre, int releaseYear);
+    List<Game> findByUserAndGenreAndReleaseYearIsGreaterThanEqual(User user, String genre, int minReleaseYear);
 
     Game findFirstByGenre(String genre);
     int countByGenre(String genre);

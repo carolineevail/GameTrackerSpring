@@ -1,9 +1,6 @@
 package com.theironyard;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -25,6 +22,9 @@ public class Game {
     String genre;
 
     int releaseYear;
+
+    @ManyToOne
+    User user;
 
     public Game() {
     }
